@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "dev": "tsc -w -p .",
-    "install": "rm -rf dist && tsc -p .",
+    "install": "tsc -p .",
+    "build": "rm -rf dist && tsc -p .",
     "lint": "eslint . --ext .ts",
     "test:acceptance": "npm run cypress:run",
     "cypress:run": "cypress run --config-file test/acceptance/cypress.json",
@@ -45,7 +46,8 @@
     "domhandler": "^4.0.0",
     "front-matter": "^4.0.0",
     "htmlparser2": "^6.0.0",
-    "markdown-it": "14.1.0"
+    "markdown-it": "14.1.0",
+    "typescript": "5.3.3"
   },
   "peerDependencies": {
     "vite": ">= 2.0.0"
@@ -62,7 +64,6 @@
     "@vue/compiler-sfc": "3.4.15",
     "cypress": "13.6.4",
     "eslint": "8.56.0",
-    "typescript": "5.3.3",
     "vite": "5.3.5"
   }
 }
