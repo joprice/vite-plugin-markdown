@@ -9,15 +9,9 @@
   "files": [
     "dist",
     "src",
-    "tsconfig.json"
+    "tsconfig.json",
+    "package.json"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "module": "./dist/index.js",
-      "main": "./dist/index.js"
-    }
-  },
   "scripts": {
     "dev": "tsc -w -p .",
     "install": "tsc -p .",
