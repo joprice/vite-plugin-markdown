@@ -174,4 +174,4 @@ export const plugin = (options: PluginOptions = {}): Plugin => {
 }
 
 export default plugin
-exports.default = plugin
+//exports.default = plugin

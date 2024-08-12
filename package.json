@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "dev": "tsc -w -p .",
-    "install": "tsc -p .",
+    "install": "tsc -p tsconfig.json",
     "build": "rm -rf dist && tsc -p .",
     "lint": "eslint . --ext .ts",
     "test:acceptance": "npm run cypress:run",

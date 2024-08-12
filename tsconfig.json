@@ -6,9 +6,10 @@
     "strict": true,
     "declaration": true,
     "noUnusedLocals": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": false,
     "outDir": "dist",
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ES2020", "DOM"],
     "sourceMap": true,
     "skipLibCheck": true
   },
