@@ -10,6 +10,7 @@
     "dev": "tsc -w -p .",
     "build": "rm -rf dist && tsc -p .",
     "lint": "eslint . --ext .ts",
+    "install": "build",
     "test:acceptance": "npm run cypress:run",
     "cypress:run": "cypress run --config-file test/acceptance/cypress.json",
     "cypress:open": "cypress open --config-file test/acceptance/cypress.json"
