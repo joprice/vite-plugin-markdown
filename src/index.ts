@@ -1,5 +1,5 @@
 import Frontmatter from 'front-matter'
-import MarkdownIt from 'markdown-it'
+import MarkdownIt, { Options } from 'markdown-it'
 import { Plugin } from 'vite'
 import { TransformResult } from 'rollup'
 import { parseDOM, DomUtils } from 'htmlparser2'
@@ -16,7 +16,7 @@ export enum Mode {
 export interface PluginOptions {
   mode?: Mode[]
   markdown?: (body: string) => string
-  markdownIt?: MarkdownIt | MarkdownIt.Options
+  markdownIt?: MarkdownIt | Options
 }
 
 const markdownCompiler = (options: PluginOptions): MarkdownIt | { render: (body: string) => string } => {
@@ -36,15 +36,15 @@ class ExportedContent {
   #exports: string[] = []
   #contextCode = ''
 
-  addContext (contextCode: string): void {
+  addContext(contextCode: string): void {
     this.#contextCode += `${contextCode}\n`
   }
 
-  addExporting (exported: string): void {
+  addExporting(exported: string): void {
     this.#exports.push(exported)
   }
 
-  export (): string {
+  export(): string {
     return [this.#contextCode, `export { ${this.#exports.join(', ')} }`].join('\n')
   }
 }
@@ -167,7 +167,7 @@ export const plugin = (options: PluginOptions = {}): Plugin => {
   return {
     name: 'vite-plugin-markdown',
     enforce: 'pre',
-    transform (code, id) {
+    transform(code, id) {
       return tf(code, id, options)
     },
   }
