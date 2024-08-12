@@ -4,11 +4,12 @@
   "description": "Import markdown files in vite",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "tsconfig.json"
   ],
   "scripts": {
     "dev": "tsc -w -p .",
-    "prepare": "tsc -p .",
+    "install": "tsc -p .",
     "build": "rm -rf dist && tsc -p .",
     "lint": "eslint . --ext .ts",
     "test:acceptance": "npm run cypress:run",
