@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "tsc -w -p .",
-    "preinstall": "tsc -p .",
+    "prepare": "tsc -p .",
     "build": "rm -rf dist && tsc -p .",
     "lint": "eslint . --ext .ts",
     "test:acceptance": "npm run cypress:run",
